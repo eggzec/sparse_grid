@@ -2,9 +2,16 @@
 
 **A Python Sparse Grid Package**
 
-[![PyPI](https://img.shields.io/pypi/v/sparse_grid)](https://pypi.org/project/sparse_grid/)
+[![Tests](https://github.com/eggzec/sparse_grid/actions/workflows/code_test.yml/badge.svg)](https://github.com/eggzec/sparse_grid/actions/workflows/code_test.yml)
+[![Documentation](https://github.com/eggzec/sparse_grid/actions/workflows/docs_build.yml/badge.svg)](https://github.com/eggzec/sparse_grid/actions/workflows/docs_build.yml)
+[![Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)
+
+[![codecov](https://codecov.io/gh/eggzec/sparse-grid/branch/master/graph/badge.svg)](https://codecov.io/gh/eggzec/sparse-grid)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=eggzec_sparse_grid&metric=alert_status)](https://sonarcloud.io/project/overview?id=eggzec_sparse_grid)
 [![License: BSD-3](https://img.shields.io/badge/License-BSD--3-blue.svg)](LICENSE)
-[![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-blue.svg)](https://www.python.org/downloads/)
+
+[![PyPI Downloads](https://img.shields.io/pypi/dm/sparse-grid.svg?label=PyPI%20downloads)](https://pypi.org/project/sparse-grid/)
+[![Python versions](https://img.shields.io/pypi/pyversions/sparse-grid.svg)](https://pypi.org/project/sparse-grid/)
 
 `sparse_grid` is a pure-Python implementation of regular
 [sparse grids](https://en.wikipedia.org/wiki/Sparse_grid)
