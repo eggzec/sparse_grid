@@ -4,32 +4,36 @@ site_url: https://eggzec.github.io/sparse_grid/
 repo_url: https://github.com/eggzec/sparse_grid
 repo_name: eggzec/sparse_grid
 
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/eggzec/sparse_grid
+    - icon: fontawesome/brands/python
+      link: https://pypi.org/project/sparse_grid/
+
 theme:
   name: material
-
-nav:
-  - Home: index.md
-  - Getting Started: getting-started.md
-  - User Guide: user-guide.md
-  - API Reference:
-      - Overview: api/index.md
-      - SparseGrid: api/grid.md
-      - GridPoint: api/point.md
-      - Utilities: api/utils.md
-
-plugins:
-  - search
-  - mkdocstrings:
-      handlers:
-        python:
-          options:
-            show_source: false
-            show_signature_annotations: true
-            merge_init_into_class: true
-            show_root_heading: true
-            show_root_toc_entry: false
+  features:
+    - content.code.copy
 
 markdown_extensions:
   - admonition
+  - tables
+  - fenced_code
   - pymdownx.superfences
   - pymdownx.highlight
+  - pymdownx.arithmatex:
+      generic: true
+  - toc:
+      permalink: true
+
+extra_javascript:
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+nav:
+  - Home: index.md
+  - Theory: theory.md
+  - Installation: installation.md
+  - Quickstart: quickstart.md
+  - API Reference: api.md
+  - References: references.md
