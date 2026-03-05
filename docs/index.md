@@ -1,35 +1,49 @@
 # sparse_grid
 
-`sparse_grid` is a compact Python implementation of regular sparse grids over
-box domains.
+A pure-Python implementation of regular sparse grids over box domains.
 
-It provides:
+## Features
 
-- sparse-grid index and point generation,
-- nodal-to-hierarchical coefficient conversion,
-- fast function evaluation using hierarchical basis functions.
+- Sparse-grid index and point generation via recursive Smolyak construction.
+- Nodal-to-hierarchical coefficient conversion using the lifting algorithm.
+- Fast function evaluation on hierarchical hat-basis representations.
+- Arbitrary box domains $[a_1, b_1] \times \cdots \times [a_d, b_d]$.
 
-## Documentation map
+## Mathematical model
 
-- **Getting Started**: installation and first working example.
-- **User Guide**: core workflow and key data structures.
-- **API Reference**: auto-generated module docs via `mkdocstrings`.
+A regular sparse grid of level $n$ in $d$ dimensions is the union of hierarchical subspaces satisfying the admissibility condition
 
-## Quick example
+$$
+\mathcal{H}_{n,d} = \bigcup_{\lvert\mathbf{l}\rvert_1 \le n + d - 1} W_{\mathbf{l}},
+$$
 
-```python
-from sparse_grid import SparseGrid
+where $\mathbf{l} = (l_1, \ldots, l_d)$ is a level multi-index and $\lvert\mathbf{l}\rvert_1 = l_1 + \cdots + l_d$.
 
-sg = SparseGrid(dim=2, level=3)
-sg.generate_points()
+Each subspace $W_{\mathbf{l}}$ contains points indexed by odd positions $p_i \in \{1, 3, \ldots, 2^{l_i} - 1\}$. The physical coordinates on $[0, 1]^d$ are
 
-for index in sg.indices:
-    pos = sg.g_p[tuple(index)].pos
-    sg.g_p[tuple(index)].fv = (
-        4.0 * pos[0] * (1.0 - pos[0]) * 4.0 * pos[1] * (1.0 - pos[1])
-    )
+$$
+x_i = \frac{p_i}{2^{l_i}}, \quad i = 1, \ldots, d.
+$$
 
-sg.nodal_2_hier()
-value = sg.eval_funct([0.25, 0.75])
-print(value)
-```
+The interpolant is expressed in the hierarchical hat basis
+
+$$
+f_n(\mathbf{x}) = \sum_{\lvert\mathbf{l}\rvert_1 \le n+d-1} \sum_{\mathbf{p}} \alpha_{\mathbf{l},\mathbf{p}}\, \prod_{i=1}^{d} \phi_{l_i, p_i}(x_i),
+$$
+
+where $\alpha_{\mathbf{l},\mathbf{p}}$ are hierarchical surplus coefficients and $\phi_{l,p}$ is the one-dimensional hat basis function.
+
+## Public API
+
+- `SparseGrid` — grid container, point generation, transforms, and evaluation
+- `GridPoint` — point storage with coordinates and function values
+- `cross` — index cross-product utility
+- `eval_basis_1d` — one-dimensional hat basis evaluation
+
+## Documentation
+
+- [Theory](theory.md) — mathematical background and algorithms
+- [Installation](installation.md) — install from PyPI or Git
+- [Quickstart](quickstart.md) — runnable examples
+- [API Reference](api.md) — class and function signatures
+- [References](references.md) — source literature
