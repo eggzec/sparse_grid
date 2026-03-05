@@ -6,7 +6,7 @@
 [![Documentation](https://github.com/eggzec/sparse_grid/actions/workflows/docs_build.yml/badge.svg)](https://github.com/eggzec/sparse_grid/actions/workflows/docs_build.yml)
 [![Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)
 
-[![codecov](https://codecov.io/gh/eggzec/sparse-grid/branch/master/graph/badge.svg)](https://codecov.io/gh/eggzec/sparse-grid)
+[![codecov](https://codecov.io/gh/eggzec/sparse_grid/branch/master/graph/badge.svg)](https://codecov.io/gh/eggzec/sparse_grid)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=eggzec_sparse_grid&metric=alert_status)](https://sonarcloud.io/project/overview?id=eggzec_sparse_grid)
 [![License: BSD-3](https://img.shields.io/badge/License-BSD--3-blue.svg)](LICENSE)
 
