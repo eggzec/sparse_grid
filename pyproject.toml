@@ -8,6 +8,7 @@ dynamic = ["version"]
 description = "A Python Sparse Grid Package"
 authors = [
     { name = "John Burkardt", email = "jvb25@pitt.edu" },
+    { name = "Jochen Garcke", email = "garcke@ins.uni-bonn.de" }
 ]
 maintainers = [
     { name = "Saud Zahir", email = "m.saud.zahir@gmail.com" },
